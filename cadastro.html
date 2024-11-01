@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:black;
+        }
+        .form-container {
+            background-color: #2c2727;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            color: white;
+        }
+        .header button{
+            background: rgb(2, 2, 61);
+            color: white;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius:  5px;
+            cursor: pointer;
+        }
+        .header button:hover {
+           background-color:  #352785;
+        }
+
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container .submit-btn {
+            width: 100%;
+            background-color:red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container .submit-btn:hover {
+            background-color:rgb(197, 22, 22)
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h2>Cadastre-se</h2>
+            <button onclick="window.location.href='tela-de-login.html'">Acessar</button>
+        </div>
+        <form action="cadastro.php" method="post" >
+            <input type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+            <input type="email" name="email" placeholder="Digite seu Email" required>
+            <input type="tel" name="telefone" placeholder="(xx)xxxxx-xxxx" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>

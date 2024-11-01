@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso com Módulos</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.module {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.module-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+
+.module-header:hover {
+    background-color: #0056b3;
+}
+
+.module-content {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.module-content p {
+    color: #333;
+    font-size: 15px;
+}
+
+.video-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Curso de Desenvolvimento Web</h1>
+
+        <div class="module">
+            <button class="module-header" onclick="toggleContent(1)">Módulo 1: Introdução ao HTML e Css</button>
+            <div id="module1-content" class="module-content">
+                <p>Neste video, vamos explorar os fundamentos do HTML e CSS, as linguagens essenciais para a construção de páginas web. Você aprenderá como criar estruturas básicas, formatar textos, inserir imagens e links, além de entender a importância dessas tecnologias no cenário atual de desenvolvimento web.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU" 
+                    title="Vídeo sobre As ferramentas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="module">
+            <button class="module-header" onclick="toggleContent(2)">Módulo 2: HTML</button>
+            <div id="module2-content" class="module-content">
+                <p>Este módulo contém os seguintes artigos, que te levarão por toda teoria básica do HTML e fornecerão muitas oportunidades para você testar algumas habilidades.</p>
+            </div>
+        </div>
+
+        <div class="module">
+            <button class="module-header" onclick="toggleContent(3)">Módulo 3: CSS</button>
+            <div id="module3-content" class="module-content">
+                <p>Neste módulo, você aprenderá a aplicar estilos às suas páginas web usando CSS. Vamos explorar cores, layouts, fontes, margens e muito mais!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(moduleNumber) {
+    const content = document.getElementById(`module${moduleNumber}-content`);
+    const isDisplayed = content.style.display === 'block';
+    
+    // Fecha o conteúdo de todos os módulos
+    document.querySelectorAll('.module-content').forEach(mod => {
+        mod.style.display = 'none';
+    });
+    
+    // Exibe o conteúdo do módulo clicado se ele estiver fechado
+    if (!isDisplayed) {
+        content.style.display = 'block';
+    }
+}
+
+
+    </script>
+</body>
+</html>

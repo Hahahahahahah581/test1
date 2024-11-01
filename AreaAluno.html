@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .linkContainer {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaçamento entre os itens */
+            padding: 20px;
+            background: peru;
+        }
+
+        .linkItem {
+            text-align: center;
+        }
+
+        .linkItem img {
+            display: block;
+            margin: 0 auto 10px; /* Centraliza a imagem e adiciona espaçamento abaixo */
+            max-width: 100px; /* Ajusta o tamanho da imagem */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+
+        .linkItem a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .linkItem a:hover {
+            color: #900C3F; /* Altera a cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="linkContainer">
+        <div class="linkItem">
+            <a href="#link1">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                Matriculas
+            </a>
+        </div>
+        <div class="linkItem">
+            <a href="#link2">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                Cursos finalizados
+            </a>
+        </div>
+        <div class="linkItem">
+            <a href="#link3">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                Cursos Pagos
+            </a>
+        </div>
+    </div>
+
+    <p>Minhas matriculas</p>
+    <p>Meu histórico</p>
+    
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação-HTML E CSS</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    h1{
+        background: rgb(42, 42, 158);
+        height: 100px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        color: white;
+        padding-left: 20px;
+    }
+
+    .curso {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px;
+    }
+
+    .Div1 {
+        width: 70%;
+        text-align: left;
+    }
+
+    .Div1 p {
+        column-count: 1;
+        column-gap: 30px;
+        font-size: 20px;
+    }
+
+    .Div1 h2{
+        color: rgb(42, 42, 158);
+    }
+
+    .Div2 {
+        width: 40%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subscribe-button {
+        padding: 10px 20px;
+        background-color: rgb(112, 10, 10);
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-left: 40px;
+    }
+
+    .subscribe-button a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .subscribe-button:hover {
+        background-color: rgb(73, 1, 1);
+    }
+
+    .modulo {
+        width: 100%;
+        margin-left: 40px;
+    }
+
+    .modulo ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .modulo li {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+</style>
+<body>
+    <h1>Esportes</h1>
+
+    <div class="curso">
+        <div class="Div1">
+            <h2>Curso Skate</h2>
+
+            <p>Este curso irá ensinar você, tenha ou não experiência no skate, a dominar tudo o que é necessário para a sua evolução</p>
+
+            <p>Você vai dominar as técnicas essenciais, desde o equilíbrio até as manobras avançadas, como o famoso FLIP. </p>
+
+            <p>Com aulas práticas e passo a passo, o curso é focado em te ajudar a evoluir no seu ritmo, ganhar confiança e superar desafios no esporte. Não importa sua idade ou nível de habilidade, nosso curso é o caminho certo para você se destacar no skate e curtir</p>
+
+            <p>Aprenda skate de forma rápida e divertida.</p>
+        </div>
+
+        <div class="Div2">
+            <h4>Duração: <span style="color: red;">40h</span>  |  Nível: <span style="color: red;">Iniciante ao Avançado</span></h4>
+        </div>
+    </div>
+
+    <button class="subscribe-button" onclick="realizarInscricao()">Inscreva-se</button>
+
+    <div class="modulo">
+        <div class="contModulo">
+            <h3>Conteúdo</h3>
+        </div>
+
+        <div class="moduloNum">
+            <ul>
+                <li>Modulo 1 - Introdução - Como andar de skate</li>
+                <li>Modulo 2 - Equilíbro e rampas </li>
+                <li>Modulo 3 - Ollie ao Flip</li>
+            </ul>
+        </div>
+        <!--
+
+        <div class="Aprendizados">
+            <h4>Oque você aprenderá</h4>
+            <ul>
+                <li>Equilíbro em cima do skate</li>
+                <li>Virar no skate</li>
+                <li>Rampas</li>
+                <li>Manobras básicas </li>
+            </ul>
+
+        </div>
+-->
+    </div>
+
+    <script>
+        function realizarInscricao() {
+            alert("Sua inscrição foi realizada! Vá para a área do aluno.");
+            window.location.href = 'cursoEsport.html'; // Redireciona o usuário para a página da área do aluno
+        }
+    </script>
+</body>
+</html>

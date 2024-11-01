@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    background-color: white;
+    color:white;
+    padding-top: 70px; /*Vai evitar contato com o h1 e a nav bar*/
+}
+
+
+p  {
+    color:white;
+    text-decoration: underline none;
+    font-size: 25px;
+    padding: 30px;
+    right: 10px;
+}
+
+
+header {
+    background-color:#91120b;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    background-color: #91120b;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Fixa a navbar no topo da página */
+    width: 100%; /* Garante que a navbar ocupe toda a largura da tela */
+    top: 0; /* Define a posição fixa no topo */
+    z-index: 1000; /* Mantém a navbar acima de outros elementos */
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6rem;
+    width: 100%;
+}
+
+.logo{
+    height: 20px;
+    display: flex;
+
+}
+
+.logo h1 {
+    font-size: 25px;
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.navbar img {
+    height: 35px;
+    width: 35px;
+    padding-right: 1px;
+    border-radius: 20px;
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.Conjunto {
+    position: relative;
+    display: inline-block;
+}
+
+.ConjuntoA {
+    display: none;
+    position: absolute;
+    background-color: #09002e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.ConjuntoA a { 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+.ConjuntoA a:hover {
+    background-color: #0c002e;
+}
+
+.Conjunto:hover .ConjuntoA {
+    display: block;
+}
+
+.ConjuntoA:hover a {
+    background-color: #0500487d;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: color 0.4s, border-bottom 0.4s;
+}
+
+.nav-link:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.login-buttons {
+    display: flex;
+    padding-top: 10px ;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #180F4A;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.4s;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #0d024b;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-list ul {
+        display: none;
+    }
+    
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #91120b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mobile-menu .nav-item {
+        padding: 1rem 0;
+    }
+
+    .mobile-login-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-login-buttons .button {
+        margin: 10px 0;
+    }
+
+}
+
+
+.titulo {
+    background-color: rgb(207, 19, 19);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.titulo h1 {
+    font-size: 3rem;
+    color: #ffffff;
+
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+main p {
+    color: white;
+}
+
+.contact-info, .contact-form {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-style: solid red;
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .contact-form p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.contact-details a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    background-color: white;
+    color: #ffffff;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ee3f0a;
+    outline: none;
+}
+
+form button{
+            padding: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            background: red;
+            border: 2px solid white;
+            color: white;
+            transition: all 1s;
+            margin-bottom: 20px;
+          }
+
+form button:hover{
+            background-color: rgb(207, 19, 19);
+            border-radius: 16px;
+          }
+
+
+          footer {
+        background-color: black;
+        color: #ffffff;
+        padding: 2rem 0;
+        margin-top: 50px;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-column img{
+        height: 100px;
+        width: 100px;
+        margin-left: 10px;
+    }
+    
+    .footer-column h2, .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-column li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+        color: #f4f4f4;
+    }
+    
+    .footer-column form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-column input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .footer-column button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(136, 18, 18);
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .footer-column button:hover {
+        background-color:red;
+    }
+    
+    .footer-copyright {
+        text-align: center;
+        padding: 1rem;
+        background-color: #222222;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+    }
+
+
+    </style>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo1.jpg" alt="">
+                <h1>IF Information</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="estrutura.html" class="nav-link">Início</a></li>
+
+                    <div class="Conjunto">
+                    <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a>
+                        <div class="ConjuntoA">
+                            <a href="programação.html">Programação</a>
+                            <a href="Inovação.html">Organização</a>
+                            <a href="Esportes.html">Esportes</a>
+                        </div>
+                    </div></li>
+
+                    <li class="nav-item"><a href="sobreNos.html" class="nav-link">Sobre nós</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="login-buttons">
+                <a href="tela-de-login.html" class="button">Entrar</a>
+                <a href="cadastro.php" class="button">Cadastro</a>
+                <a href="#" class="button">Área do aluno</a>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()">
+                    <img class="icon" src="menu_white_36dp.svg" alt="Menu">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cursos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="botao-menuE">  
+                <button><a href="#">Entrar</a></button>
+                <button><a href="#">Cadastro</a></button>
+            </div>
+        </div>
+
+    <div class="titulo">
+        <h1>Contato</h1>
+    </div>
+        
+
+    <main>
+        <section class="contact-info">
+            <h2>Tire Suas Dúvidas</h2>
+            <p>Fique à vontade para entrar em contato. Estou sempre aberto para discutir novos projetos, ideias criativas e oportunidades.</p>
+            <div class="contact-details">
+                <img src="email-icon.png" alt="Ícone de Email" class="contact-icon">
+                <p><a href="mailto:sk8@gmail.com">sk8@gmail.com</a></p>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Envie uma Mensagem</h2>
+            <form action="#" method="post">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" cols="30" rows="10" placeholder="Digite sua mensagem" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>IF Information</h2>
+                <img src="logo1.jpg" alt="">
+            </div>
+            <div class="footer-column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="estrutura.html">Início</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <form>
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2024 Social Academy. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>

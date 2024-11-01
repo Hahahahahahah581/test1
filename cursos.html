@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+       }
+
+       body {
+    background-color: #f7f0f7;
+    padding-top: 70px;
+          }
+
+    
+p  {
+    color: #000000;
+    text-decoration: underline none;
+    font-size: 25px;
+    padding: 30px;
+    right: 10px;
+}
+
+
+header {
+    background-color:#91120b;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    background-color: #91120b;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Fixa a navbar no topo da página */
+    width: 100%; /* Garante que a navbar ocupe toda a largura da tela */
+    top: 0; /* Define a posição fixa no topo */
+    z-index: 1000; /* Mantém a navbar acima de outros elementos */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6rem;
+    width: 100%;
+}
+
+.logo{
+    height: 20px;
+    display: flex;
+
+}
+
+.logo h4 {
+    font-size: 25px;
+    color: #ffffff;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.navbar img {
+    height: 40px;
+    width: 40px;
+    padding-right: 1px;
+    border-radius: 10px;
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.Conjunto {
+    position: relative;
+    display: inline-block;
+}
+
+.ConjuntoA {
+    display: none;
+    position: absolute;
+    background-color: #09002e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.ConjuntoA a { 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+.ConjuntoA a:hover {
+    background-color: #0c002e;
+}
+
+.Conjunto:hover .ConjuntoA {
+    display: block;
+}
+
+.ConjuntoA:hover a {
+    background-color: #0500487d;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: color 0.4s, border-bottom 0.4s;
+}
+
+.nav-link:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.login-buttons {
+    display: flex;
+    padding-top: 10px ;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #180F4A;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.4s;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #0d024b;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-list ul {
+        display: none;
+    }
+    
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #91120b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mobile-menu .nav-item {
+        padding: 1rem 0;
+    }
+
+    .mobile-login-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-login-buttons .button {
+        margin: 10px 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+.tituloTC h2 {
+    margin-top: 40px;
+    color: #000000;
+    font-size: 30px;
+    padding-left: 30px;
+}
+
+
+.BotaoFiltros {
+    position: relative;
+    text-align: right;
+    margin-bottom: 50px;
+    padding-right: 30px;
+}
+
+.dropbtn {
+    
+    background-color: rgb(112, 10, 10);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: rgb(48, 2, 2);
+}
+
+.dropdown-content {
+        margin-top: 20px ;
+        background-color: #000069;
+        width: 600px;
+        height: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        margin-left: 300px;
+        border-radius: 15px;
+    }
+
+    .dropdown-content a {
+        color: #f1eeee;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        text-decoration: underline;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #000069;
+
+    }
+
+
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 150px; 
+    margin: 20px;
+    padding-left: 30px; 
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    width: 300px;
+    min-height: 400px; /* Define uma altura mínima para uniformizar os cards */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+.card p {
+    margin: 20px 0; /* Adiciona um espaçamento entre o parágrafo e outros elementos */
+}
+
+
+
+.card-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Limita a altura máxima da imagem */
+    object-fit: cover; /* Ajusta a imagem para caber sem distorção */
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: auto; /* Empurra o botão para a parte inferior */
+    padding: 10px 15px;
+    background-color: #09002e;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button a {
+    color: white; 
+    text-decoration: none;
+}
+
+
+footer {
+        background-color: black;
+        color: #ffffff;
+        padding: 2rem 0;
+        margin-top: 50px;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .footer-column {
+        flex: 1;
+        min-width: 100px;
+        flex-direction: column;
+    }
+
+    .footer-column img{
+        height: 80px;
+        width: 80px;
+        border-radius: 15px;
+        
+    }
+    
+    .footer-column h2, .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-column li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+        color: #f4f4f4;
+    }
+    
+    .footer-column form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-column input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .footer-column button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(136, 18, 18);
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .footer-column button:hover {
+        background-color:red;
+    }
+    
+    .footer-copyright {
+        text-align: center;
+        padding: 0.7rem;
+        margin-bottom: 30px;
+        font-size: 10px;
+        height: 7px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo1.jpg" alt="">
+                <h4>IF Information</h4>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="estrutura.html" class="nav-link">Início</a></li>
+
+                    <div class="Conjunto">
+                    <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a>
+                        <div class="ConjuntoA">
+                            <a href="programação.html">Programação</a>
+                            <a href="Inovação.html">Organização</a>
+                            <a href="Esportes.html">Esportes</a>
+                        </div>
+                    </div></li>
+
+                    <li class="nav-item"><a href="sobreNos.html" class="nav-link">Sobre nós</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="login-buttons">
+                <a href="tela-de-login.html" class="button">Entrar</a>
+                <a href="cadastro.php" class="button">Cadastro</a>
+                <a href="#" class="button">Área do aluno</a>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()">
+                    <img class="icon" src="menu_white_36dp.svg" alt="Menu">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cursos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="botao-menuE">  
+                <button><a href="#">Entrar</a></button>
+                <button><a href="#">Cadastro</a></button>
+            </div>
+        </div>
+
+<main>
+    <div class="tituloTC">
+    <h2> Todos os Cursos</h2>
+    </div>
+
+
+    <!-- Botão de Filtros -->
+    <div class="BotaoFiltros">
+        <button class="dropbtn" onclick="toggleDropdown()">Filtros</button>
+        <div id="dropdown" class="dropdown-content" style="display: none;">
+            <a href="programação.html">HTML e CSS</a>
+            <a href="Inovação.html">Liderança</a>
+            <a href="Esportes.html">Skate</a>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        
+        <div class="card">
+            <h2>Programação</h2><br><br><br>
+            <img src="fundo-programação.webp" alt="" class="card-img">
+            <br><br><p>Aprenda HTML e CSS</p>
+            <button><a href="programação.html">Saiba mais</a></button>
+        </div>
+        
+        <div class="card">
+            <h2>Desenvolvimento Pessoal</h2><br>
+            <img src="fundo-liderança.jpg" alt="" class="card-img">
+            <p>Liderança nas Organizações</p>
+            <button><a href="Inovação.html">Saiba mais</a></button> 
+        </div>
+
+        <div class="card">
+            <h2>Diversão</h2><br><br><br>
+            <img src="fundo-esportes.jpeg" alt="" class="card-img">
+            <br><br><p>Aprenda o Flip</p>
+            <button><a href="Esportes.html">Saiba mais</a></button>
+        </div>
+    </div>
+    
+
+    </div>
+</main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>IF Information</h2>
+                <img src="logo1.jpg" alt="">
+            </div>
+            <div class="footer-column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="estrutura.html">Início</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <form>
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2024 Social Academy. Todos os direitos reservados.
+        </div>
+    </footer>
+    <script>
+        
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Fechar o dropdown se o usuário clicar fora dele
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    };
+
+    </script>
+</body>
+</html>
+   
